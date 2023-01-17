@@ -59,13 +59,30 @@ export default function ParserNav() {
     const handleSaveDoc = () => {
         SaveDoc({ title, cells: tempObj.cells });
     }
+    const handleOpenNb = e => {
+        const file = e.target.files[0]
+        const r = new FileReader();
+        r.readAsText(file);
+        r.onload = function () {
+            setTempObj({ title: JSON.parse(r.result).title, cells: JSON.parse(r.result).cells });
+        }
+        r.onerror = function () {
+            console.log(r.error);
+        }
+    }
     return (
         <Navbar>
             <Container>
                 <Nav>
                     <Nav.Item style={{ display: "inline" }}>
-                        <input type="text" name="title" value={title} onChange={handleTitleChange} style={{ width: "100px", border: "none", outline: "none", borderBottom: "1px solid black" }} />
+                        <input type="text" name="title" value={tempObj.title ? tempObj.title : title} onChange={handleTitleChange} style={{ width: "100px", border: "none", outline: "none", borderBottom: "1px solid black" }} />
                         <button className='ml-2 btn btn-sm btn-outline-dark' onClick={handleSaveDoc}>SAVE</button>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <FormLabel className='btn mb-0 btn-sm'>
+                            Open File
+                            <input type="file" accept='.ptnb' id="nb-import" onChange={handleOpenNb} />
+                        </FormLabel>
                     </Nav.Item>
                     <NavDropdown title="Import File">
                         <Nav.Item>
