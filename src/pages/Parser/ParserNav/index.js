@@ -38,7 +38,8 @@ export default function ParserNav() {
                 header.forEach((item, j) => keys[item] = data[i][j])
                 return keys;
             });
-            setTempObj({ ...tempObj, cells: [...tempObj.cells, finalData] })
+            const dataObj = { id: Date.now(), rows: finalData, type: "data", subcells: [] }
+            setTempObj({ ...tempObj, cells: [...tempObj.cells, dataObj] })
         }
         r.onerror = function () {
             console.log(r.error);
@@ -64,7 +65,7 @@ export default function ParserNav() {
         const r = new FileReader();
         r.readAsText(file);
         r.onload = function () {
-            setTempObj({ title: JSON.parse(r.result).title, cells: JSON.parse(r.result).cells });
+            setTempObj(JSON.parse(r.result));
         }
         r.onerror = function () {
             console.log(r.error);
