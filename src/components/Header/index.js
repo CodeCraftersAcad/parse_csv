@@ -11,6 +11,7 @@ export default function Header() {
                     <img src={logo} alt={"Particose Logo"} id="nav-logo" />
                     Particose
                 </Link>
+                <Link to="/parser" className='nav-link'>Parser</Link>
             </Container>
         </Navbar>
     )
