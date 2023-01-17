@@ -1,10 +1,12 @@
 import React, { useState, useContext } from 'react'
-import { Nav, Container, FormLabel, Dropdown } from 'react-bootstrap'
+import { Navbar, Nav, Container, FormLabel, NavDropdown } from 'react-bootstrap'
 import FileContext from '../../../store/fileStore'
 import PTD from '../../../utils/PTD'
+import { SaveDoc } from '../../../utils/SaveDoc'
 import './ParserNav.css'
 export default function ParserNav() {
     const { tempObj, setTempObj } = useContext(FileContext)
+    const [title, setTitle] = useState("Untitled")
     const [gInput, setGInput] = useState("")
     const localCsvWHeader = e => {
         if (!window.File || !window.FileReader || !window.FileList || !window.Blob) {
@@ -51,27 +53,34 @@ export default function ParserNav() {
     const handleGoogleCsv = async () => {
         PTD.getRemoteCsv(gInput);
     }
+    const handleTitleChange = e => {
+        setTitle(e.target.value);
+    }
+    const handleSaveDoc = () => {
+        SaveDoc({ title, cells: tempObj.cells });
+    }
     return (
-        <Nav>
+        <Navbar>
             <Container>
-                <Dropdown>
-                    <Dropdown.Toggle variant="outline-dark" size='sm'>
-                        Import File
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
+                <Nav>
+                    <Nav.Item style={{ display: "inline" }}>
+                        <input type="text" name="title" value={title} onChange={handleTitleChange} style={{ width: "100px", border: "none", outline: "none", borderBottom: "1px solid black" }} />
+                        <button className='ml-2 btn btn-sm btn-outline-dark' onClick={handleSaveDoc}>SAVE</button>
+                    </Nav.Item>
+                    <NavDropdown title="Import File">
                         <Nav.Item>
-                            <FormLabel className='btn mb-0 w-50 btn-sm'>
+                            <FormLabel className='btn mb-0 btn-sm'>
                                 Local CSV
                                 <input type="file" accept=".csv" id="localFileInput" onChange={handleLocalCsv} />
                             </FormLabel>
-                            <Dropdown.Item className='btn btn-outline-dark btn-sm w-50'>
-                                Google Sheet
-                                {/* <input type="text" onChange={handleGoogleInputChange} /> */}
-                            </Dropdown.Item>
                         </Nav.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                        <NavDropdown.Item className='btn btn-outline-dark btn-sm'>
+                            Google Sheet
+                            {/* <input type="text" onChange={handleGoogleInputChange} /> */}
+                        </NavDropdown.Item>
+                    </NavDropdown>
+                </Nav>
             </Container>
-        </Nav>
+        </Navbar>
     )
 }

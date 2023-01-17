@@ -1,7 +1,7 @@
 import React from 'react';
 
 const FileContext = React.createContext({
-    title: "",
+    title: "Untitled",
     setTitle: () => { },
     cells: [],
     setCells: () => { },
