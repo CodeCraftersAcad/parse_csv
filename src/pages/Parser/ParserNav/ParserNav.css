@@ -1,0 +1,10 @@
+#localFileBtn {
+    position: relative;
+}
+
+#localFileInput {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+}
