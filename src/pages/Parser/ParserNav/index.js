@@ -60,11 +60,11 @@ export default function ParserNav() {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Nav.Item>
-                            <FormLabel className='btn btn-sm'>
+                            <FormLabel className='btn mb-0 w-50 btn-sm'>
                                 Local CSV
                                 <input type="file" accept=".csv" id="localFileInput" onChange={handleLocalCsv} />
                             </FormLabel>
-                            <Dropdown.Item className='btn btn-outline-dark btn-sm'>
+                            <Dropdown.Item className='btn btn-outline-dark btn-sm w-50'>
                                 Google Sheet
                                 {/* <input type="text" onChange={handleGoogleInputChange} /> */}
                             </Dropdown.Item>
