@@ -9,7 +9,7 @@ export default function Header() {
             <Container>
                 <Link to="/" className='nav-link'>
                     <img src={logo} alt={"Particose Logo"} id="nav-logo" />
-                    Particose
+                    Particose &#x28;Docs&#x29;
                 </Link>
                 <Link to="/parser" className='nav-link'>Parser</Link>
                 <Nav.Item><a href="http://www.parttimedevs.com/freelearning.html" target={"_blank"} rel="noopener noreferrer">Free Learning</a></Nav.Item>

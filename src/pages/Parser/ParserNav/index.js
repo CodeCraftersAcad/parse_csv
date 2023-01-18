@@ -104,7 +104,13 @@ export default function ParserNav() {
             <Container>
                 <Nav>
                     <Nav.Item style={{ display: "inline" }}>
-                        <input type="text" name="title" value={tempObj.title ? tempObj.title : title} onChange={handleTitleChange} style={{ width: "100px", border: "none", outline: "none", borderBottom: "1px solid black" }} />
+                        <input
+                            type="text"
+                            name="title"
+                            value={tempObj.title ? tempObj.title : title}
+                            onChange={handleTitleChange}
+                            style={{ width: "100px", border: "none", outline: "none", borderBottom: "1px solid black" }} />
+                        <span style={{ paddingRight: "5px" }}>.ptnb</span>
                         <button className='py-0 btn btn-sm btn-outline-dark' onClick={handleSaveDoc}>SAVE</button>
                     </Nav.Item>
                     <Nav.Item>

@@ -1,14 +1,15 @@
 import React from 'react'
-import AnimatedHeader from '../../components/AnimtedHero'
+import importG1 from '../../images/importGsheet1.png'
+import importG2 from '../../images/importGsheet2.png'
+import importG3 from '../../images/importGsheet3.png'
 export default function Home() {
     return (
         <div>
             <h1 className='text-center'>Hi :&#x29;</h1>
             <div style={{ width: "70%", margin: "0 auto" }}>
                 <div>
-                    <p>Thank you for coming.</p>
-                    <p>The parser is still under construction.</p>
-                    <p>The google sheet button doesn't quite work yet.</p>
+                    <p className='my-0'>Thank you for check out my CSV Parser.</p>
+                    <p className='mt-0'>The parser is still under construction.</p>
                     <p className='mb-0'><b>Current Features</b></p>
                     <ul>
                         <li>CSV must have a header</li>
@@ -47,6 +48,24 @@ export default function Home() {
                         <li>An File Explore box will open</li>
                         <li>Find and click on a PTNB file</li>
                         <li>If all goes well the info you previously saved will be rendered to the page</li>
+                    </ol>
+                    <p><b>Import Google Sheet</b></p>
+                    <ol>
+                        <li>
+                            <p>To publish Google Sheet. Click the <code>File</code> tab. Mover your cursor to <code>Share</code>. Click on <code>Publish to web</code></p>
+                            <img src={importG1} alt={"Publish Google Sheet"} style={{ height: "300px", width: "auto" }} />
+                        </li>
+                        <li className='pt-5'>
+                            <p>A modal will appear, click on the dropdown that says <code>Web Page</code>, choose the <code>Comma-separated values .csv</code> option</p>
+                            <img src={importG2} alt={"Save as CSV"} style={{ height: "300px", width: "auto" }} />
+                        </li>
+                        <li className='pt-5'>
+                            <p>Copy the url in the dialog box.</p>
+                            <img src={importG3} alt={"Copy Google Sheet URL"} style={{ height: "300px", width: "auto" }} />
+                        </li>
+                        <li>
+                            <p>In the Parser Navbar click <code>Import File</code> &gt; <code>Google Sheet</code>. Past URL into modal and click <code>Import CSV</code></p>
+                        </li>
                     </ol>
                 </div>
             </div>
