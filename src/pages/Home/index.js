@@ -8,7 +8,7 @@ export default function Home() {
             <h1 className='text-center'>Hi :&#x29;</h1>
             <div style={{ width: "70%", margin: "0 auto" }}>
                 <div>
-                    <p className='my-0'>Thank you for check out my CSV Parser.</p>
+                    <p className='my-0'>Thank you for checing out my CSV Parser.</p>
                     <p className='mt-0'>The parser is still under construction.</p>
                     <p className='mb-0'><b>Current Features</b></p>
                     <ul>
@@ -23,7 +23,7 @@ export default function Home() {
                         <li>Find the <code>Parser</code> link on the Navbar and click it</li>
                         <li>On the Parser page click the <code>Import File</code> dropdown</li>
                         <li>Choose <code>Local CSV</code></li>
-                        <li>An File Explore box will open</li>
+                        <li>A File Explore box will open</li>
                         <li>Find and click on a CSV file</li>
                         <li>If all goes well a box will appear with your data</li>
                         <li>You can then <code>Table</code> or <code>Delete</code> your data.</li>
@@ -34,7 +34,7 @@ export default function Home() {
                         <li>Find the <code>Parser</code> link on the Navbar and click it</li>
                         <li>On the Parser page click the <code>Import File</code> dropdown</li>
                         <li>Choose <code>Local CSV</code></li>
-                        <li>An File Explore box will open</li>
+                        <li>A File Explore box will open</li>
                         <li>Find and click on a CSV file</li>
                         <li>If all goes well a box will appear with your data</li>
                         <li>Find the input at the top of the page that says <code>Untitled</code></li>
@@ -45,7 +45,7 @@ export default function Home() {
                     <ol>
                         <li>Find the <code>Parser</code> link on the Navbar and click it</li>
                         <li>Find the <code>Open File</code> link in the Navbar and click it</li>
-                        <li>An File Explore box will open</li>
+                        <li>A File Explore box will open</li>
                         <li>Find and click on a PTNB file</li>
                         <li>If all goes well the info you previously saved will be rendered to the page</li>
                     </ol>
@@ -70,7 +70,7 @@ export default function Home() {
                 </div>
                 <h2 className='text-center'>Future Development</h2>
                 <ul>
-                    <li>Chartting data. Giving the user the ability to choose ulumns with numeric values and render a bar chart</li>
+                    <li>Chartting data. Giving the user the ability to choose two columns with numeric values and render a bar chart</li>
                     <li>Importing JSON files.</li>
                     <li>Dropping rows with null values.</li>
                 </ul>
