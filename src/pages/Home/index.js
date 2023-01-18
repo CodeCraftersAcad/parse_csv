@@ -4,7 +4,7 @@ import importG2 from '../../images/importGsheet2.png'
 import importG3 from '../../images/importGsheet3.png'
 export default function Home() {
     return (
-        <div>
+        <div style={{ marginBottom: "50px" }}>
             <h1 className='text-center'>Hi :&#x29;</h1>
             <div style={{ width: "70%", margin: "0 auto" }}>
                 <div>
@@ -68,6 +68,12 @@ export default function Home() {
                         </li>
                     </ol>
                 </div>
+                <h2 className='text-center'>Future Development</h2>
+                <ul>
+                    <li>Chartting data. Giving the user the ability to choose ulumns with numeric values and render a bar chart</li>
+                    <li>Importing JSON files.</li>
+                    <li>Dropping rows with null values.</li>
+                </ul>
             </div>
         </div>
     )
