@@ -48,6 +48,6 @@ export default function CellList() {
         </div>
     ))
     return (
-        <div>{cellList}</div>
+        <div style={{ minHeight: "400px" }}>{cellList}</div>
     )
 }

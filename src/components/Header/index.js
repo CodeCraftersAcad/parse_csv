@@ -5,7 +5,7 @@ import './Header.css'
 import logo from '../../images/parser_logo.png'
 export default function Header() {
     return (
-        <Navbar>
+        <Navbar id="main-nav">
             <Container>
                 <Link to="/" className='nav-link'>
                     <img src={logo} alt={"Particose Logo"} id="nav-logo" />

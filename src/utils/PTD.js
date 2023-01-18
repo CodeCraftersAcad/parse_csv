@@ -71,26 +71,7 @@ const PTD = {
         }
     },
     getRemoteCsv: async url => {
-        const res = await fetch(url);
-        const text = await res.text();
-        // console.log(data);
-        let finalData = [];
-        let rows;
-        const rawRows = text.split("\r");
-        if (rawRows.length > 1) {
-            rows = rawRows.map(item => item.split(","));
-        } else {
-            let tempArr = rawRows[0].split("\n")
-            rows = tempArr.map(item => item.split(","))
-        }
-        const header = rows[0]
-        const data = rows.splice(1, rows.length - 1);
-        finalData = data.map((d, i) => {
-            let keys = {};
-            header.forEach((item, j) => keys[item] = data[i][j])
-            return keys;
-        });
-        console.log(finalData)
+
     },
 }
 export default PTD
